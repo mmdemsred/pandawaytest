@@ -1,0 +1,10 @@
+:root {
+    --grey-900: #868688;
+    --primary: #2E6FF2;
+    --black: #1F1F22;
+    --info-500: #3B82F6;
+    --black-pure: #000000;
+
+    --border-radius: 0.375rem;
+    --border-radius: 0.5rem;
+}

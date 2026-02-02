@@ -1,28 +1,42 @@
 <template>
-  <header>
+  <header class="header">
     <div class="container">
-      <div class="logo_block">
-        <img src="@/assets/logop.svg" alt="logo" />
+      <div class="logo-block">
+        <img src="@/assets/icons/common/logop.svg" alt="Логотип" />
       </div>
 
-      <div class="menu_block">
-        <div class="menu_block_left">
-          <p class="text-base"><a href="#">Искать жильё</a></p>
-          <p class="text-base"><a href="#">Блог</a></p>
-          <p class="text-base"><a href="#">Частые вопросы</a></p>
+      <div class="menu-block">
+        <div class="menu-block-left">
+          <p class="text-base">
+            <a href="#">Искать жильё</a>
+          </p>
+          <p class="text-base">
+            <a href="#">Блог</a>
+          </p>
+          <p class="text-base">
+            <a href="#">Частые вопросы</a>
+          </p>
 
-          <img src="@/assets/zvon.svg" alt="" class="icon-svg" />
-          <img src="@/assets/like.svg" alt="" class="icon-svg" />
+          <img
+            src="@/assets/icons/common/zvon.svg"
+            alt="Уведомления"
+            class="icon-svg"
+          />
+          <img
+            src="@/assets/icons/common/like.svg"
+            alt="Избранное"
+            class="icon-svg"
+          />
         </div>
 
-        <div class="menu_block_butt">
-          <button class="my_account r8">
+        <div class="menu-block-button">
+          <button class="account-btn r8">
             Мой аккаунт
           </button>
         </div>
       </div>
 
-      <!-- Бургер -->
+      <!-- Бургер меню -->
       <button class="burger-btn r6" aria-label="Открыть меню">
         <div class="burger-icon">
           <div class="burger-line line1 r6"></div>
@@ -35,110 +49,155 @@
 </template>
 
 <script setup>
-
+// Компонент не требует логики
 </script>
 
 <style scoped>
-header{
-    padding:1rem 1.5rem;
-    font-family: "Ubuntu", sans-serif;
-    border-bottom: 1px solid #E5E5E7;
-   
+.header {
+  padding: 1rem 1.5rem;
+  font-family: "Ubuntu", sans-serif;
+  border-bottom: 1px solid #e5e5e7;
 }
-header .container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+
+.header .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
-.my_account{
-    font-size: 1rem; 
-    line-height: 1.5; 
-    color: var(--black);
-    border: 1px solid var(--black);
-    padding: 0.8rem 1.5rem;
-    font-weight: 500;
-    transition: color 0.3s ease, border-color 0.3s ease;
+
+.logo-block {
+  /* Стили для логотипа при необходимости */
 }
-.my_account:hover{
-    border-color: var(--primary);
-    color: var(--primary);
-   
+
+.menu-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
 }
-.menu_block{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
+
+.menu-block-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
-.menu_block_left{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+
+.menu-block-left p a {
+  padding: 0.375rem 0.875rem;
+  transition: color 0.3s ease;
+  font-weight: 500;
+  white-space: nowrap;
 }
-.menu_block_left p a{
-    padding: 0.375rem 0.875rem;
-    transition: color 0.3s ease;
-    font-weight: 500;
+
+.menu-block-left p a:hover {
+  color: var(--primary);
 }
-.menu_block_left p a:hover{
-    color: var(--primary);
+
+.icon-svg {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
 }
-/* .icon-svg {
-    transition: filter 0.3s ease;
-}
+
 .icon-svg:hover {
-    filter: brightness(0) saturate(100%) 
-            invert(32%) sepia(98%) saturate(1658%) 
-            hue-rotate(204deg) brightness(102%) contrast(95%);
-    
-} */
+  opacity: 0.8;
+}
+
+.account-btn {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--black);
+  border: 1px solid var(--black);
+  padding: 0.8rem 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  background: none;
+  cursor: pointer;
+}
+
+.account-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
 
 /* Бургер-кнопка */
 .burger-btn {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 52px;
-    height: 52px;
-    position: relative;
-    padding: 0;
-    z-index: 100;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid var(--black);
-
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 3.25rem;
+  height: 3.25rem;
+  position: relative;
+  padding: 0;
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--black);
 }
 
 .burger-icon {
-    position: relative;
-    width: 16px;
-    height: 12px;
+  position: relative;
+  width: 1rem;
+  height: 0.75rem;
 }
 
 .burger-line {
-    position: absolute;
-    background-color: #000;
-    height: 2px;
-    left: 0;
-    transition: all 0.3s ease;
+  position: absolute;
+  background-color: #000;
+  height: 2px;
+  left: 0;
+  transition: all 0.3s ease;
 }
+
 .line1 {
-    top: 0;
-    width: 1rem;
+  top: 0;
+  width: 1rem;
 }
 
 .line2 {
-    top: 0.25rem;
-    width: 1rem; 
+  top: 0.25rem;
+  width: 1rem;
 }
 
 .line3 {
-    top: 0.5rem;
-    width: 1rem;
+  top: 0.5rem;
+  width: 1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .menu-block {
+    gap: 1rem;
+  }
+  
+  .menu-block-left {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-block {
+    display: none;
+  }
+
+  .burger-btn {
+    display: flex;
+  }
+
+  .header{
+    padding: 1rem;
+  }
+
+  
+}
+
+@media (max-width: 399px) {
+  .logo-block {
+    max-width: 160px;
+  }
 }
 </style>
