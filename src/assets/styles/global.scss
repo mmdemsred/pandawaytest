@@ -1,33 +1,29 @@
-@import './fonts.css';
-@import './variables.css';
 
-/* ===== MODERN CSS RESET ===== */
+@import './fonts.css'; // Можно оставить как CSS или переделать в SCSS
+@import './variables.css'; // Или лучше: @import './variables.scss';
+
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-
 * {
     margin: 0;
     padding: 0;
 }
 
-
 html {
     height: 100%;
 }
-
 
 body {
     min-height: 100%;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
 }
-
 
 img,
 picture,
@@ -39,7 +35,6 @@ svg {
     height: auto;
 }
 
-
 input,
 button,
 textarea,
@@ -47,7 +42,6 @@ select {
     font: inherit;
     color: inherit;
 }
-
 
 p,
 h1,
@@ -59,7 +53,6 @@ h6 {
     overflow-wrap: break-word;
 }
 
-
 #root,
 #__next {
     isolation: isolate;
@@ -69,6 +62,7 @@ ul[role='list'],
 ol[role='list'] {
     list-style: none;
 }
+
 a {
     text-decoration: none;
     color: inherit;
@@ -79,6 +73,7 @@ button {
     border: none;
     cursor: pointer;
 }
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -89,30 +84,37 @@ button {
         scroll-behavior: auto !important;
     }
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
 fieldset {
     border: 0;
     margin: 0;
     padding: 0;
 }
+
 textarea {
     resize: vertical;
 }
 
+
 .r6 {
     border-radius: var(--border-radius);
 }
+
 .r8 {
     border-radius: var(--border-radius);
 }
+
 .text-base {
     font-size: 1rem; 
     line-height: 1.5; 
     color: var(--grey-900);
 }
+
 .container {
     width: 100%;
     max-width: 61rem;
@@ -120,7 +122,5 @@ textarea {
 }
 
 @media (max-width: 399px) {
-    .container {
-        padding: 0 1rem;
-    }
+    
 }

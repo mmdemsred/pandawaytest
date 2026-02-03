@@ -52,152 +52,149 @@
 // Компонент не требует логики
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .header {
   padding: 1rem 1.5rem;
   font-family: "Ubuntu", sans-serif;
   border-bottom: 1px solid #e5e5e7;
-}
 
-.header .container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo-block {
-  /* Стили для логотипа при необходимости */
-}
-
-.menu-block {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-}
-
-.menu-block-left {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.menu-block-left p a {
-  padding: 0.375rem 0.875rem;
-  transition: color 0.3s ease;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.menu-block-left p a:hover {
-  color: var(--primary);
-}
-
-.icon-svg {
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
-.icon-svg:hover {
-  opacity: 0.8;
-}
-
-.account-btn {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--black);
-  border: 1px solid var(--black);
-  padding: 0.8rem 1.5rem;
-  font-weight: 500;
-  transition: color 0.3s ease, border-color 0.3s ease;
-  background: none;
-  cursor: pointer;
-}
-
-.account-btn:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
-/* Бургер-кнопка */
-.burger-btn {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 3.25rem;
-  height: 3.25rem;
-  position: relative;
-  padding: 0;
-  z-index: 100;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid var(--black);
-}
-
-.burger-icon {
-  position: relative;
-  width: 1rem;
-  height: 0.75rem;
-}
-
-.burger-line {
-  position: absolute;
-  background-color: #000;
-  height: 2px;
-  left: 0;
-  transition: all 0.3s ease;
-}
-
-.line1 {
-  top: 0;
-  width: 1rem;
-}
-
-.line2 {
-  top: 0.25rem;
-  width: 1rem;
-}
-
-.line3 {
-  top: 0.5rem;
-  width: 1rem;
-}
-
-/* Адаптивность */
-@media (max-width: 1024px) {
-  .menu-block {
-    gap: 1rem;
-  }
-  
-  .menu-block-left {
-    gap: 0.75rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .menu-block {
-    display: none;
-  }
-
-  .burger-btn {
+  .container {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .header{
-    padding: 1rem;
+  .menu-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    &-left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+
+      p {
+        a {
+          padding: 0.375rem 0.875rem;
+          transition: color 0.3s ease;
+          font-weight: 500;
+          white-space: nowrap;
+
+          &:hover {
+            color: var(--primary);
+          }
+        }
+      }
+    }
+
+    &-button {
+      .account-btn {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: var(--black);
+        border: 1px solid var(--black);
+        padding: 0.8rem 1.5rem;
+        font-weight: 500;
+        transition: color 0.3s ease, border-color 0.3s ease;
+        background: none;
+        cursor: pointer;
+
+        &:hover {
+          border-color: var(--primary);
+          color: var(--primary);
+        }
+      }
+    }
   }
 
-  
-}
+  .icon-svg {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
 
-@media (max-width: 399px) {
-  .logo-block {
-    max-width: 160px;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  /* Бургер-кнопка */
+  .burger-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 3.25rem;
+    height: 3.25rem;
+    position: relative;
+    padding: 0;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--black);
+
+    .burger-icon {
+      position: relative;
+      width: 1rem;
+      height: 0.75rem;
+
+      .burger-line {
+        position: absolute;
+        background-color: #000;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s ease;
+      }
+
+      .line1 {
+        top: 0;
+        width: 1rem;
+      }
+
+      .line2 {
+        top: 0.25rem;
+        width: 1rem;
+      }
+
+      .line3 {
+        top: 0.5rem;
+        width: 1rem;
+      }
+    }
+  }
+
+  /* Адаптивность */
+  @media (max-width: 1024px) {
+    .menu-block {
+      gap: 1rem;
+
+      &-left {
+        gap: 0.75rem;
+      }
+    }
+  }
+
+  @media (max-width: 925px) {
+    .menu-block {
+      display: none;
+    }
+
+    .burger-btn {
+      display: flex;
+    }
+    .header {
+      padding: 1rem;
+    }
+  }
+
+  @media (max-width: 399px) {
+    .logo-block {
+      max-width: 160px;
+    }
   }
 }
 </style>
